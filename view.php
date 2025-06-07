@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="topnav">
-        <a style="color: red" href="index.php">◄ Select Different Folder</a>
+        <a style="color: red" href="/">◄ Select Different Folder</a>
         <a href="https://findawolf.com/post/list">FindAWolf</a>
         <a href="https://clenonwolf.com">ClenonWolf</a>
     </div>
