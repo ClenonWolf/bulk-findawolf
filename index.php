@@ -27,9 +27,13 @@
             }
             echo "</ul>";
             $d->close();
-            
-            $files = scan_dir($basedir);
-            echo "Total: {$files['total_files']} images, {$files['total_size']} bytes\n";
+            ?>
+            <form action='/' method='get'><input <?php if (isset($_GET["show_stats"])) echo 'checked' ?> onchange='this.form.submit();' type='checkbox' name='show_stats'>Show Stats</input></form>
+            <?php
+            if (isset($_GET['show_stats'])){            
+                $files = scan_dir($basedir);
+                echo "Total: {$files['total_files']} images, {$files['total_size']} bytes";
+            }
             ?>
     </div>
     <div class="footer">
