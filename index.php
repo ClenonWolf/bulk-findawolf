@@ -14,20 +14,17 @@
     </div>
     <div class="content">
         <h1>A viewer for all the wolf images I've collected :3</h1>
-        <p>Please excuse any long loading times. For now thumbnails are generated on the fly if they don't already exist so the site might seem unresponsive. Also not yet all images :c</p>
+        <p>Please excuse any long loading times. For now thumbnails are generated on the fly if they don't already exist so the site might seem unresponsive.</p>
         <p>Select one of the following folders:</p>  
             <?php
             $basedir = "media";
             $d = dir($basedir);
             echo "<ul>";
-
-            while (false !== ($entry = $d->read()))
-            {
+            while (false !== ($entry = $d->read())) {
                 if (($entry != '.') && ($entry != '..'))
                     echo "<li class='dirselect'><a href='view.php?dir={$basedir}/{$entry}'>{$entry}</a></li>";
             }
             echo "</ul>";
-
             $d->close();
             ?>
     </div>

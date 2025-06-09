@@ -4,7 +4,8 @@
 }
 
 body {
-  background-color: #f1f1f1;
+  background-color: #232323;
+  color: white;
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -12,7 +13,7 @@ body {
 /* Style the top navigation bar */
 .topnav {
   overflow: hidden;
-  background-color: #333;
+  background-color: #111111;
 }
 
 /* Style the topnav links */
@@ -33,14 +34,14 @@ body {
 
 /* Style the content */
 .content {
-  background-color: #ddd;
+  background-color: #232323;
   padding: 10px;
 }
 
 /* Style the footer */
 .footer {
-  background-color: #f1f1f1;
-  padding: 10px;
+  background-color: #464646;
+  padding: 5px;
 }
 
 .pageselect {
@@ -50,6 +51,12 @@ body {
   margin-right: auto;
   text-align: center;
 }
+.pageselect a {
+  color: skyblue;
+}
+/* .pageselect a:visited {
+  color: lightgreen;
+} */
 
 .dirselect {
   font-size: x-large;
