@@ -15,8 +15,9 @@
     <div class="content">
         <h1>A viewer for all the wolf images I've collected :3</h1>
         <p>Please excuse any long loading times. For now thumbnails are generated on the fly if they don't already exist so the site might seem unresponsive.</p>
-        <p>Select one of the following folders:</p>  
+        <p>Select one of the following folders:</p>
             <?php
+            include "modules.php";
             $basedir = "media";
             $d = dir($basedir);
             echo "<ul>";
@@ -26,6 +27,9 @@
             }
             echo "</ul>";
             $d->close();
+            
+            $files = scan_dir($basedir);
+            echo "Total: {$files['total_files']} images, {$files['total_size']} bytes\n";
             ?>
     </div>
     <div class="footer">

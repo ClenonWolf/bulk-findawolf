@@ -51,16 +51,20 @@
 
         $prev = $page - 1;
         $next = $page + 1;
-        $pageselect_html = "<div class=pageselect>Page: $page<br>";
+        $pageselect_html = "<div class=pageselect>Total of $file_count images<br>Page: $page / $total_pages<br>";
         if ($page > 1) {
             $pageselect_html .= "<a href='?dir={$_GET["dir"]}&page=$prev&files_per_page=$files_per_page'>◄Prev</a> ";
         }
         if ($page < $total_pages) {
             $pageselect_html .= "<a href='?dir={$_GET["dir"]}&page=$next&files_per_page=$files_per_page'>Next►</a>";
         }
-        $pageselect_html .= "<br><a href='?dir={$_GET["dir"]}&page=1&files_per_page=$files_per_page'>1</a> ";
-        for ($i = 2; $i <= $total_pages; $i++) {
-            $pageselect_html .= "<a href='?dir={$_GET["dir"]}&page=$i&files_per_page=$files_per_page'>$i</a> ";
+        $pageselect_html .= "<br>";
+        for ($i = 1; $i <= $total_pages; $i++) {
+            if ($i === $page) {
+                $pageselect_html .= "<a style='color: green' href='?dir={$_GET["dir"]}&page=$i&files_per_page=$files_per_page'>$i</a> ";
+            } else {
+                $pageselect_html .= "<a href='?dir={$_GET["dir"]}&page=$i&files_per_page=$files_per_page'>$i</a> ";
+            }
         }
         $pageselect_html .= "</div>";
         echo $pageselect_html;
