@@ -32,8 +32,7 @@
             <?php
             if (isset($_GET['show_stats'])){            
                 $files = scan_dir($basedir);
-                $excl_thumb = $files['total_files'] / 2;
-                echo "Total: {$files['total_files']} files (excluding thumbnails: {$excl_thumb}, {$files['total_size']} bytes";
+                echo "Total: {$files['total_files']} files (including thumbnails), {$files['total_size']} bytes";
             }
             ?>
     </div>
