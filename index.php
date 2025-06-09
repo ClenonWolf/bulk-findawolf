@@ -28,13 +28,13 @@
             echo "</ul>";
             $d->close();
             ?>
-            <form action='/' method='get'><input <?php if (isset($_GET["show_stats"])) echo 'checked' ?> onchange='this.form.submit();' type='checkbox' name='show_stats'>Show Stats</input></form>
-            <?php
+            <!-- <form action='/' method='get'><input <?php if (isset($_GET["show_stats"])) echo 'checked' ?> onchange='this.form.submit();' type='checkbox' name='show_stats'>Show Stats</input></form>
+            <hp
             if (isset($_GET['show_stats'])){            
                 $files = scan_dir($basedir);
                 echo "Total: {$files['total_files']} files (including thumbnails), {$files['total_size']} bytes";
             }
-            ?>
+            ?> nahhhhh -->
     </div>
     <div class="footer">
         <p>Contact: <a href="mailto:contact@clenonwolf.com">contact@clenonwolf.com</a></p>
