@@ -69,10 +69,14 @@
         $pageselect_html .= "</div>";
         echo $pageselect_html;
         
+        echo "<div class='images-container'>";
         $files_slice = array_slice($files, $slice_offset, $files_per_page);
         foreach($files_slice as $file => $value)  {
             $thumb_path = "{$thumb_dir}/{$file}_thumb.jpg";
             $file_path = "{$dir}/$file";
+            $file_url = "https://bulk.findawolf.com/$file_path";
+            $flickr_id = strtok($file, "_");
+            $flickr_url = "http://flickr.com/photo.gne?id=$flickr_id";
             if(!file_exists($thumb_path)) {
                 error_log($file);
                 $imagick = new Imagick(realpath("$file_path"));
@@ -83,9 +87,16 @@
                     throw new Exception("Could not put contents.");
                 }
             }
-            echo "<a style='padding:7px' target='_blank' href='$file_path'><img src='$thumb_path' width=10% ></a>";
+            echo "
+            <div class='image-container'>
+                <a target='_blank' href='$file_path'><img src='$thumb_path'></a><br>
+                <a target='_blank' href='https://findawolf.com/upload?media={$file_url}&sourcejs={$flickr_url}'>Upload to findawolf</a><br>
+                <a target='_blank' href='$flickr_url'>Original Post</a>
+            </div>
+            ";
 
         }
+        echo "</div>";
         echo $pageselect_html;
         ?>
     </div>
