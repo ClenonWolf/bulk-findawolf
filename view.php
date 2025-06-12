@@ -74,7 +74,7 @@
         foreach($files_slice as $file => $value)  {
             $thumb_path = "{$thumb_dir}/{$file}_thumb.jpg";
             $file_path = "{$dir}/$file";
-            $file_url = "https://bulk.findawolf.com/".str_replace("%252F", "/", urlencode(urlencode($file_path)));
+            $file_url = "https://bulk.findawolf.com/".str_replace(" ", "%2520", $file_path); //should be replaced with a doube urlencode but it didn't work as expected 
             $flickr_id = strtok($file, "_");
             $flickr_url = "https://flickr.com/photo.gne?id=$flickr_id";
             if(!file_exists($thumb_path)) {
