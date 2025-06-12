@@ -14,6 +14,7 @@
         <a href="https://clenonwolf.com">ClenonWolf</a>
     </div>
     <div class="content">
+        <p>Feel free to help by uploading and tagging images using the links under the images. Sources are added automatically :p</p>
         <p>Please excuse any long loading times. For now thumbnails are generated on the fly if they don't already exist so the site might seem unresponsive.</p>
         <form method="get" action="view.php">
             <label for="files_per_page">Posts per page: </label>
@@ -28,6 +29,8 @@
                 <option <?php if (isset($_GET['files_per_page']) and intval($_GET['files_per_page']) === 75) echo 'selected="selected"' ?> value=75>75</option>
                 <option <?php if (isset($_GET['files_per_page']) and intval($_GET['files_per_page']) === 100) echo 'selected="selected"' ?> value=100>100</option>
             </select>
+            <label for="files_per_page">Or enter manually: </label>
+            <input onchange="this.form.submit();" type="number" name="files_per_page" min="1">
         </form>
 
         <?php

@@ -14,8 +14,9 @@
     </div>
     <div class="content">
         <h1>A viewer for all the wolf images I've collected :3</h1>
+        <p>Feel free to help by uploading and tagging images using the links under the images. Sources are added automatically :p</p>
         <p>Please excuse any long loading times. For now thumbnails are generated on the fly if they don't already exist so the site might seem unresponsive.</p>
-        <p>Select one of the following folders:</p>
+        <h2>Select one of the following folders:</h2>
             <?php
             include "modules.php";
             $basedir = "media";
