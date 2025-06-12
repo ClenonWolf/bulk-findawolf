@@ -74,7 +74,7 @@
         foreach($files_slice as $file => $value)  {
             $thumb_path = "{$thumb_dir}/{$file}_thumb.jpg";
             $file_path = "{$dir}/$file";
-            $file_url = "https://bulk.findawolf.com/".str_replace(" ", "%20", $file_path);
+            $file_url = "https://bulk.findawolf.com/".str_replace(" ", "+", $file_path);
             $flickr_id = strtok($file, "_");
             $flickr_url = "https://flickr.com/photo.gne?id=$flickr_id";
             if(!file_exists($thumb_path)) {
