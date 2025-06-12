@@ -74,8 +74,7 @@
         foreach($files_slice as $file => $value)  {
             $thumb_path = "{$thumb_dir}/{$file}_thumb.jpg";
             $file_path = "{$dir}/$file";
-            $file_url = "https://bulk.findawolf.com/$file_path";
-            $file_url = urlencode($file_url);
+            $file_url = "https://bulk.findawolf.com/".str_replace("%2F", "/", urlencode($file_path));
             $flickr_id = strtok($file, "_");
             $flickr_url = "https://flickr.com/photo.gne?id=$flickr_id";
             if(!file_exists($thumb_path)) {
@@ -91,7 +90,7 @@
             echo "
             <div class='image-container'>
                 <a target='_blank' href='$file_path'><img src='$thumb_path'></a><br>
-                <a target='_blank' href='https://findawolf.com/upload?&media={$file_url}&sourcejs={$flickr_url}'>Upload to findawolf</a><br>
+                <a target='_blank' href='https://findawolf.com/upload?&media=$file_url&sourcejs=$flickr_url'>Upload to findawolf</a><br>
                 <a target='_blank' href='$flickr_url'>Original Post</a>
             </div>
             ";
