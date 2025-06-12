@@ -62,7 +62,7 @@ a {
 }
 
 .images-container {
-  display: flex;
+  display: flex; /* Make it a grid :3 */
   flex-wrap: wrap;
 }
 

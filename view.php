@@ -75,6 +75,7 @@
             $thumb_path = "{$thumb_dir}/{$file}_thumb.jpg";
             $file_path = "{$dir}/$file";
             $file_url = "https://bulk.findawolf.com/$file_path";
+            $file_url = urlencode($file_url);
             $flickr_id = strtok($file, "_");
             $flickr_url = "https://flickr.com/photo.gne?id=$flickr_id";
             if(!file_exists($thumb_path)) {
