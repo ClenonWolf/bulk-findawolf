@@ -29,10 +29,12 @@
                 <option <?php if (isset($_GET['files_per_page']) and intval($_GET['files_per_page']) === 75) echo 'selected="selected"' ?> value=75>75</option>
                 <option <?php if (isset($_GET['files_per_page']) and intval($_GET['files_per_page']) === 100) echo 'selected="selected"' ?> value=100>100</option>
             </select>
+        </form>
+        <form method="get" action="view.php">
+            <input name="dir" type="text" palceholder="dir" value="<?php echo $_GET['dir']; ?>" hidden />
             <label for="files_per_page">Or enter manually: </label>
             <input onchange="this.form.submit();" type="number" name="files_per_page" min="1">
         </form>
-
         <?php
         $ignored = array('.', '..', '.svn', '.htaccess', '.directory', 'thumb');
         $dir = $_GET['dir'];
