@@ -95,7 +95,7 @@
             echo "
             <div class='image-container'>
                 <a target='_blank' href='$file_path'><img src='$thumb_path'></a><br>
-                <a href='https://findawolf.com/upload?&media=$file_url&sourcejs=$flickr_url'>Upload to findawolf</a><br>
+                <a target='_blank' href='https://findawolf.com/upload?&media=$file_url&sourcejs=$flickr_url'>Upload to findawolf</a><br>
                 <a target='_blank' href='$flickr_url'>Original Post</a>
             </div>
             ";
